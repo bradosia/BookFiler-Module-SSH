@@ -1,0 +1,22 @@
+{
+  "HTTP_accounts" : {
+    "username": "admin",
+    "password": "password"
+  },
+  "HTTP_settings" : {
+    "CaInfoPath" : "resources/curl-ca-bundle.crt",
+    "skipPeerVerification" : false,
+    "skipHostnameVerification" : false,
+    "server" : {
+      "address" : "0.0.0.0",
+      "port" : 8081,
+      "docRoot" : "resources/www",
+      "threadNum" : 2,
+      // openssl dhparam -out dh.pem 2048
+      // openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 10000 -out cert.pem -subj "//C=US\ST=CA\L=San Jose\O=BookFiler\CN=bookfiler.com"
+      "certPath" : "resources/cert.pem",
+      "privateKeyPath" : "resources/key.pem",
+      "dhKeyPath" : "resources/dh.pem"
+    }
+  }
+}
